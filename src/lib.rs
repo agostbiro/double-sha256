@@ -74,6 +74,7 @@ impl VariableOutputCore for DoubleHash256VarCore {
         Ok(Self(Sha256VarCore::new(output_size)?))
     }
 
+    /// Perform double hash on finalization
     #[inline]
     fn finalize_variable_core(&mut self, buffer: &mut Buffer<Self>, out: &mut Output<Self>) {
         Sha256VarCore::finalize_variable_core(&mut self.0, buffer, out);
